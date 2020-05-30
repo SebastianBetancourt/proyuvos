@@ -80,6 +80,7 @@ void            lapiceoi(void);
 void            lapicinit(void);
 void            lapicstartap(uchar, uint);
 void            microdelay(int);
+void		borntime(struct rtcdate *r);
 
 // log.c
 void            initlog(int dev);
@@ -160,10 +161,12 @@ void            syscall(void);
 void            timerinit(void);
 
 // trap.c
+#define SCC 23
 void            idtinit(void);
 extern uint     ticks;
 void            tvinit(void);
 extern struct spinlock tickslock;
+int		scuses[SCC];
 
 // uart.c
 void            uartinit(void);

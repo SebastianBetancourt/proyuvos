@@ -112,7 +112,7 @@ mpinit(void)
       }
       p += sizeof(struct mpproc);
       continue;
-    case MPIOAPIC:
+    case MPIOAPIC:	
       ioapic = (struct mpioapic*)p;
       ioapicid = ioapic->apicno;
       p += sizeof(struct mpioapic);
