@@ -51,6 +51,7 @@ lapicw(int index, int value)
   lapic[ID];  // wait for write to finish, by reading
 }
 
+
 void
 lapicinit(void)
 {
@@ -227,3 +228,4 @@ cmostime(struct rtcdate *r)
   *r = t1;
   r->year += 2000;
 }
+
