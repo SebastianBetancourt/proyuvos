@@ -1,8 +1,30 @@
+## proyuvos
+
+proyuvos is our submission for the Sistemas Operativos course of 2019-9 
+in Univalle. It's a modification on the xv6 operative system, that
+includes three new user commands: trace, uptime and date.
+
+__trace__ prints how many times system calls have been used since boot.
+`trace` will print each availible system call followed by its number of uses.
+You can also specify which system call info should be printed by putting its
+corresponding number as the argument. So `trace 1` will print a single line like
+`exit 5` meaning that the exit system call has been used 5 times since 
+xv6 booted up, for example. The use count is stored in an array defined in
+`trap.c` but is modified when the syscall function defined in the `syscall.c` 
+file is executed. Then the array is accessed through the newly defined trace
+system call.
+
+__uptime__ will print how many ticks have passed since boot. It does so
+by calling the already built uptime system call.
+
+__date__ will print the date pretty-printing the output of the date system call.
+
+## About xv6
 xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
 Version 6 (v6).  xv6 loosely follows the structure and style of v6,
 but is implemented for a modern x86-based multiprocessor using ANSI C.
 
-ACKNOWLEDGMENTS
+## ACKNOWLEDGMENTS
 
 xv6 is inspired by John Lions's Commentary on UNIX 6th Edition (Peer
 to Peer Communications; ISBN: 1-57398-013-7; 1st edition (June 14,
@@ -32,17 +54,3 @@ Wolovick, wxdao, Grant Wu, Jindong Zhang, Icenowy Zheng, and Zou Chang Wei.
 
 The code in the files that constitute xv6 is
 Copyright 2006-2018 Frans Kaashoek, Robert Morris, and Russ Cox.
-
-ERROR REPORTS
-
-We switched our focus to xv6 on RISC-V; see the mit-pdos/xv6-riscv.git
-repository on github.com.
-
-BUILDING AND RUNNING XV6
-
-To build xv6 on an x86 ELF machine (like Linux or FreeBSD), run
-"make". On non-x86 or non-ELF machines (like OS X, even on x86), you
-will need to install a cross-compiler gcc suite capable of producing
-x86 ELF binaries (see https://pdos.csail.mit.edu/6.828/).
-Then run "make TOOLPREFIX=i386-jos-elf-". Now install the QEMU PC
-simulator and run "make qemu".
