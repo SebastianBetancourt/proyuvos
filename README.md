@@ -15,7 +15,7 @@ file is executed. Then the array is accessed through the newly defined trace
 system call.
 
 __uptime__ will print how many ticks have passed since boot. It does so
-by calling the already built uptime system call.
+by calling the already built-in uptime system call.
 
 __date__ will print the date pretty-printing the output of the date system call.
 
