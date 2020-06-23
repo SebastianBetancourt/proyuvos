@@ -1,6 +1,6 @@
 ## proyuvos
 
-proyuvos is our submission for the Sistemas Operativos course project of 2019-9 
+proyuvos is our submission for the Sistemas Operativos course project of 2019-2 
 in Univalle. It's a modification on the xv6 operative system, that
 includes three new user commands: trace, uptime and date.
 
